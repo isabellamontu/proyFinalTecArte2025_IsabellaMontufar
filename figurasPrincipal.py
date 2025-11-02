@@ -1,12 +1,15 @@
 import pandas as pd
+#importar libreria pandas
 from funciones import triangulo, circulo, rectangulo
 
+#importar funciones de area
+
 dataFile = pd.read_csv("figuras.csv")
+#guardar la informacion de figuras en dataFile
+
 
 print("Procesando Figuras...\n")
-
-areas = []
-perimetros = []
+#imprimir mensaje de que esta procesando figuras
 
 for index, row in dataFile.iterrows():
 	print(f"Fila {index} : FIGURA= {row['FIGURA']}, Medida1 = {row['MEDIDA1']}, Medida2 ={row['MEDIDA2']}")
@@ -17,3 +20,4 @@ for index, row in dataFile.iterrows():
 	elif row['FIGURA'] == "r":
                 area = rectangulo(row['MEDIDA1'], row['MEDIDA2'])
 	print(f"Area = {area} ")
+#imprime cada digura con sus medidas, identifica que figura es y dependiendo de que figura es utiliza diferente funcion para calcular el area 
